@@ -1,60 +1,42 @@
 package com.example.gpacalculator
 
-import android.app.Activity
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
 import android.widget.EditText
-import android.widget.GridLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.get
 import androidx.core.widget.doOnTextChanged
-import androidx.transition.Visibility
 import com.example.gpacalculator.databinding.ActivityMainBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-
-public enum class Course{
-    CS,MANAGEMANT,MATH
-}
-public enum class Subject(val credits:Int, val course: Course){
 
 
-    I2I(6,Course.CS),FOP(6,Course.CS),DS(9,Course.CS),I2CA(6,Course.CS),ENG(3,Course.CS,Course.MANAGEMANT);
-
-    constructor(credits: Int, course:Course,course2: Course) : this(credits,course)
-}
-
-
-class Semester(val subjects: List<Subject>, val view: ConstraintLayout)
 
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mainBinding: ActivityMainBinding
+    private lateinit var mainBinding: ActivityMainBinding
 
 
-    val cs1Sem = Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.cs1Semester.cs1Semester)
+    private lateinit var cs1Sem:Semester
 
-    var choosingCourse:Boolean = false
+    private var choosingCourse:Boolean = false
 
-    var choosingSemester:Boolean = false
+    private var choosingSemester:Boolean = false
 
-    var currentCourse:Course = Course.CS
+    private var currentCourse:Course = Course.CS
 
-    var currentSemester:Int = 0
+    private var currentSemester:Int = 1
 
-    var currentView:ConstraintLayout = mainBinding.cs1Semester.cs1Semester
+    private lateinit var currentView:ConstraintLayout
 
-    var currentSubjects:List<Subject> = cs1Sem.subjects
+    private lateinit var currentSubjects:List<Subject>
 
-    var gradeList: List<EditText> = listOf(mainBinding.score1,mainBinding.score2,mainBinding.score3,mainBinding.score4,mainBinding.score5)
+    private lateinit var gradeList: List<EditText>
 
-    var sub_Grade_Map: MutableMap<Subject, Float> = mapOf<Subject,Float>() as MutableMap<Subject, Float>
+    private var subGradeMap: MutableMap<Subject, Float> = mapOf<Subject,Float>() as MutableMap<Subject, Float>
 
 
 
@@ -72,23 +54,27 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        currentView = mainBinding.cs1SemesterLayout.cs1SemesterLayout
+        cs1Sem = Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.cs1SemesterLayout.cs1SemesterLayout)
+        currentSubjects = cs1Sem.subjects
+        gradeList = listOf(mainBinding.score1,mainBinding.score2,mainBinding.score3,mainBinding.score4,mainBinding.score5)
+
         mainBinding.main.setOnClickListener{
             choosingCourse = false
             showCourses()
             mainBinding.Gpa.text = calcGpa().toString()
         }
 
-        val regex = Regex("(1|2|3|4|5|6|7|8|9|0)*")
+        val regex = Regex("([1234567890])*")
 
-        gradeList.forEach { i->
-            if (!regex.matches(i.text.toString())){
-                throw IllegalArgumentException()
-            }
-
-            i.doOnTextChanged { text, start, before, count ->
+        gradeList.forEach { editText ->
+            editText.doOnTextChanged { text, _, _, _ ->
+                if (!regex.matches(text.toString())) {
+                    // Show an error message instead of throwing an exception
+                    editText.error = "Invalid input"
+                }
                 calcGpa()
             }
-
         }
 
 
@@ -109,20 +95,23 @@ class MainActivity : AppCompatActivity() {
             mainBinding.chooseCourse.text = mainBinding.CompScience.text
             choosingCourse = false
             showCourses()
+            showSemesterLayout()
         }
 
         mainBinding.Managemant.setOnClickListener {
-            currentCourse = Course.CS
+            currentCourse = Course.MANAGEMANT
             mainBinding.chooseCourse.text = mainBinding.Managemant.text
             choosingCourse = false
             showCourses()
+            showSemesterLayout()
         }
 
         mainBinding.Math.setOnClickListener {
-            currentCourse = Course.CS
+            currentCourse = Course.MATH
             mainBinding.chooseCourse.text = mainBinding.Math.text
             choosingCourse = false
             showCourses()
+            showSemesterLayout()
         }
 
         mainBinding.semester1.setOnClickListener {
@@ -130,55 +119,63 @@ class MainActivity : AppCompatActivity() {
             mainBinding.courseNum.text = mainBinding.semester1.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester2.setOnClickListener {
             currentSemester=2
             mainBinding.courseNum.text = mainBinding.semester2.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester3.setOnClickListener {
             currentSemester=3
             mainBinding.courseNum.text = mainBinding.semester3.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester4.setOnClickListener {
             currentSemester=4
             mainBinding.courseNum.text = mainBinding.semester4.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester5.setOnClickListener {
             currentSemester=5
             mainBinding.courseNum.text = mainBinding.semester5.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester6.setOnClickListener {
             currentSemester=6
             mainBinding.courseNum.text = mainBinding.semester6.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester7.setOnClickListener {
             currentSemester=7
             mainBinding.courseNum.text = mainBinding.semester7.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
         mainBinding.semester8.setOnClickListener {
             currentSemester=8
             mainBinding.courseNum.text = mainBinding.semester8.text
             choosingSemester = false
             showSemesters()
+            showSemesterLayout()
         }
 
 
     }
 
 
-    fun showCourses(){
+    private fun showCourses(){
         if (choosingCourse){
         mainBinding.CompScience.visibility = View.VISIBLE
         mainBinding.Managemant.visibility = View.VISIBLE
@@ -193,7 +190,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun showSemesters(){
+    private fun showSemesters(){
         if (choosingSemester) {
             mainBinding.semester1.visibility = View.VISIBLE
             mainBinding.semester2.visibility = View.VISIBLE
@@ -217,50 +214,50 @@ class MainActivity : AppCompatActivity() {
         calcGpa()
     }
 
-    fun showSemesterLaout(){
+    private fun showSemesterLayout(){
         currentView.visibility = View.INVISIBLE
         when(currentSemester){
             1 -> when(currentCourse){
                 Course.CS -> {
                     cs1Sem.view.visibility= View.VISIBLE
                     currentSubjects = cs1Sem.subjects
-                    currentView = mainBinding.cs1Semester.cs1Semester
+                    currentView = mainBinding.cs1SemesterLayout.cs1SemesterLayout
                 }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             2 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             3 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             4 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             5 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             6 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             7 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             8 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1Semester.cs1Semester.visibility = View.VISIBLE
+                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
@@ -271,15 +268,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     
-    fun calcGpa():Float{
+    private fun calcGpa():Float{
         mapSubjects()
 
         var gpSum = 0.0f
         var creditSum = 0.0f
-        for (n in  sub_Grade_Map.keys){
-            if (sub_Grade_Map.get(n)!! >=0.5){
+        for (n in  subGradeMap.keys){
+            if (subGradeMap[n]!! >=0.5){
                 creditSum+=n.credits
-                gpSum+=n.credits*sub_Grade_Map.get(n)!!
+                gpSum+=n.credits* subGradeMap[n]!!
             }
         }
 
@@ -287,22 +284,19 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun mapSubjects(){
-        var index = 0
-        for (n in  currentSubjects){
-            sub_Grade_Map.set(n,grade_to_GP().get(index))
-            index++
+    private fun mapSubjects(){
+        for ((index, n) in currentSubjects.withIndex()){
+            subGradeMap[n] = gradeToGp()[index]
 
         }
 
     }
 
 
-    fun grade_to_GP():MutableList<Float>{
-        var gpList:MutableList<Float> = emptyList<Float>() as MutableList
-        var index = 0
-        for (n in  gradeList){
-            var x = n.text.toString().toInt()
+    private fun gradeToGp():MutableList<Float>{
+        val gpList:MutableList<Float> = emptyList<Float>() as MutableList
+        for ((index, n) in gradeList.withIndex()){
+            val x = n.text.toString().toIntOrNull() ?: 0
             if (x>=94) gpList.add(index,4.0F)
             else if (91<=x) gpList.add(index,3.7f)
             else if (88<=x) gpList.add(index,3.4f)
@@ -318,7 +312,6 @@ class MainActivity : AppCompatActivity() {
             else if (51<=x) gpList.add(index,0.5f)
             else  gpList.add(index,0.0f)
 
-            index++
         }
 
         return gpList

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/cs_1_semester"
+    android:id="@+id/cs_1_semester_layout"
+    android:background="@color/white"
     >
 
 
