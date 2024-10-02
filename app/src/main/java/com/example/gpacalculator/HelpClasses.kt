@@ -8,7 +8,7 @@ enum class Course{
 
 enum class Subject(val credits:Int){
 
-    REG(6),MINOR(6),INTERN(12),NINECRED(9),ENG(3)
+    I2I(6),FOP(6),DS(9),I2CA(6),ENG(3);
 
 }
 

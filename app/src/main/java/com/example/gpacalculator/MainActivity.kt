@@ -19,10 +19,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBinding: ActivityMainBinding
 
-    private val defaultSubjects:List<Subject> = listOf(Subject.REG,Subject.REG,Subject.REG,Subject.REG,Subject.REG)
 
-    private var cs1Sem:Semester = Semester(listOf(Subject.REG,Subject.NINECRED,Subject.REG,Subject.REG,Subject.ENG),findViewById(R.id.cs_1_semester_layout))
-
+    private lateinit var cs1Sem: Semester
 
     private var choosingCourse:Boolean = false
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var gradeList: List<EditText>
 
-    private var subGradeMap: MutableMap<Subject, Float> = mapOf<Subject,Float>() as MutableMap<Subject, Float>
+    private var subGradeMap: MutableMap<Subject, Float> = mutableMapOf()
 
 
 
@@ -54,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        val cs1Sem:Semester= Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.currentSEM.cs1SemesterLayout)
+
 
         currentView = cs1Sem.view
         currentSubjects = cs1Sem.subjects
@@ -61,7 +61,9 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.main.setOnClickListener{
             choosingCourse = false
+            choosingSemester = false
             showCourses()
+            showSemesters()
             mainBinding.Gpa.text = calcGpa().toString()
         }
 
@@ -70,9 +72,9 @@ class MainActivity : AppCompatActivity() {
         gradeList.forEach { editText ->
             editText.doOnTextChanged { text, _, _, _ ->
                 if (!regex.matches(text.toString())) {
-                    // Show an error message instead of throwing an exception
                     editText.error = "Invalid input"
                 }
+
                 calcGpa()
             }
         }
@@ -274,29 +276,33 @@ class MainActivity : AppCompatActivity() {
         var gpSum = 0.0f
         var creditSum = 0.0f
         for (n in  subGradeMap.keys){
-            if (subGradeMap[n]!! >=0.5){
+            if (subGradeMap[n]!! !=0.0f){
                 creditSum+=n.credits
                 gpSum+=n.credits* subGradeMap[n]!!
             }
         }
+
+
 
         return gpSum/creditSum
     }
 
 
     private fun mapSubjects(){
+        val gradeToGpList = gradeToGp()
         for ((index, n) in currentSubjects.withIndex()){
-            subGradeMap[n] = gradeToGp()[index]
+            subGradeMap[n] = gradeToGpList[index]
 
         }
 
     }
 
 
-    private fun gradeToGp():MutableList<Float>{
-        val gpList:MutableList<Float> = emptyList<Float>() as MutableList
-        for ((index, n) in gradeList.withIndex()){
-            val x = n.text.toString().toIntOrNull() ?: 0
+    private fun gradeToGp():List<Float>{
+        val gpList:MutableList<Float> = mutableListOf()
+        var index = 0;
+        for (n in gradeList){
+            var x = n.text.toString().toIntOrNull() ?:0
             if (x>=94) gpList.add(index,4.0F)
             else if (91<=x) gpList.add(index,3.7f)
             else if (88<=x) gpList.add(index,3.4f)
@@ -309,9 +315,10 @@ class MainActivity : AppCompatActivity() {
             else if (64<=x) gpList.add(index,1.3f)
             else if (61<=x) gpList.add(index,1.0f)
             else if (56<=x) gpList.add(index,0.8f)
-            else if (51<=x) gpList.add(index,0.5f)
+            else if (51==x) gpList.add(index,0.5f)
             else  gpList.add(index,0.0f)
 
+            index++
         }
 
         return gpList
