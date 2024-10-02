@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/cs_3_semester_layout"
+android:background="@color/white"
+    >
+
+
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:rowCount="5"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="20dp"
+    >
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="0"
+        android:id="@+id/DB"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="100dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:text="Data Bases 1 (DB1) "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
+
+    <TextView
+
+        android:id="@+id/AIDS"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_marginTop="20dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:text="Algorithms in Data stuctures (AiDS)"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/I2I">
+
+    </TextView>
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="2"
+        android:id="@+id/LiAl"
+        android:layout_width="252dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="20dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:text="Linear Algebra (LA4I) "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DS">
+
+    </TextView>
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="3"
+        android:id="@+id/minor1"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:text="Minor Subject 1  "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/I2CA">
+
+    </TextView>
+
+    <TextView
+        android:layout_column="0"
+        android:layout_row="4"
+        android:id="@+id/English"
+        android:layout_width="250dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:autoSizeTextType="uniform"
+        android:background="@color/black"
+        android:text="Minor Subject 2 "
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FOP">
+
+    </TextView>
+
+
+
+
+
+</GridLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

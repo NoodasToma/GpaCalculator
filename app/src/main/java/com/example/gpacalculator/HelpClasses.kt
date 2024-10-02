@@ -6,12 +6,10 @@ enum class Course{
     CS,MANAGEMANT,MATH
 }
 
-enum class Subject(val credits:Int, val course: Course){
+enum class Subject(val credits:Int){
 
+    REG(6),MINOR(6),INTERN(12),NINECRED(9),ENG(3)
 
-    I2I(6,Course.CS),FOP(6,Course.CS),DS(9,Course.CS),I2CA(6,Course.CS),ENG(3,Course.CS,Course.MANAGEMANT);
-
-    constructor(credits: Int, course:Course,course2: Course) : this(credits,course)
 }
 
 

@@ -19,8 +19,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var mainBinding: ActivityMainBinding
 
+    private val defaultSubjects:List<Subject> = listOf(Subject.REG,Subject.REG,Subject.REG,Subject.REG,Subject.REG)
 
-    private lateinit var cs1Sem:Semester
+    private var cs1Sem:Semester = Semester(listOf(Subject.REG,Subject.NINECRED,Subject.REG,Subject.REG,Subject.ENG),findViewById(R.id.cs_1_semester_layout))
+
 
     private var choosingCourse:Boolean = false
 
@@ -53,9 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-        currentView = mainBinding.cs1SemesterLayout.cs1SemesterLayout
-        cs1Sem = Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.cs1SemesterLayout.cs1SemesterLayout)
+        currentView = cs1Sem.view
         currentSubjects = cs1Sem.subjects
         gradeList = listOf(mainBinding.score1,mainBinding.score2,mainBinding.score3,mainBinding.score4,mainBinding.score5)
 
@@ -221,43 +221,43 @@ class MainActivity : AppCompatActivity() {
                 Course.CS -> {
                     cs1Sem.view.visibility= View.VISIBLE
                     currentSubjects = cs1Sem.subjects
-                    currentView = mainBinding.cs1SemesterLayout.cs1SemesterLayout
+                    currentView = cs1Sem.view
                 }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             2 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             3 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             4 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             5 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             6 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             7 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             8 -> when(currentCourse){
-                Course.CS -> mainBinding.cs1SemesterLayout.cs1SemesterLayout.visibility = View.VISIBLE
+                Course.CS -> TODO()
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }

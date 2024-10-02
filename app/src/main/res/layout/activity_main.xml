@@ -8,9 +8,12 @@
     tools:context=".MainActivity">
 
     <include
-        android:id="@+id/cs_1_semester_layout"
-        layout="@layout/cs_course_1_semester"
-        android:visibility="visible" />
+        android:id="@+id/currentSEM"
+        android:layout = "@layout/cs_course_1_semester"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
