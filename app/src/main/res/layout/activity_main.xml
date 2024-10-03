@@ -24,21 +24,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:text="KIU GPA Calculator"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <Button
         android:id="@+id/chooseCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="140dp"
         android:backgroundTint="@color/black"
         android:clickable="true"
         android:focusable="true"
@@ -46,22 +40,22 @@
         android:textAlignment="viewStart"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbar" />
 
     <Button
         android:id="@+id/courseNum"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:backgroundTint="@color/black"
         android:text="0"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/appbar" />
@@ -82,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chooseCourse"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/Managemant"
@@ -100,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CompScience"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/Math"
@@ -118,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Managemant"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/semester_1"
@@ -134,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/chooseCourse"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/semester_2"
@@ -150,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_1"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_3"
@@ -166,7 +160,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_2"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_4"
@@ -182,7 +176,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_3"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_5"
@@ -198,7 +192,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_4"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_6"
@@ -214,7 +208,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_5"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_7"
@@ -230,7 +224,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_6"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/semester_8"
@@ -246,92 +240,101 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/semester_7"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
 
     <GridLayout
         android:id="@+id/scoreGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:rowCount="5"
+        android:layout_marginTop="97dp"
+        android:layout_marginStart="15dp"
         android:columnCount="1"
+        android:rowCount="5"
+        android:rowOrderPreserved="true"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.407"
         app:layout_constraintStart_toEndOf="@+id/chooseCourse"
         app:layout_constraintTop_toBottomOf="@+id/courseNum">
 
         <EditText
-            android:inputType="number"
-            android:autofillHints="0"
-            android:labelFor="@+id/score1"
             android:id="@+id/score1"
             android:layout_row="0"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:text=""
+            android:layout_marginTop="0dp"
+            android:autofillHints="0"
             android:background="@color/black"
-            android:textColor="@color/white"
+            android:inputType="number"
+            android:labelFor="@+id/score1"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:text="-"
             android:textAlignment="center"
-            android:maxLength="3" />
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:inputType="number"
-            android:autofillHints="0"
-            android:labelFor="@+id/score2"
             android:id="@+id/score2"
             android:layout_row="1"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:text=""
+            android:layout_marginTop="20dp"
+            android:autofillHints="0"
             android:background="@color/black"
-            android:textColor="@color/white"
+            android:inputType="number"
+            android:labelFor="@+id/score2"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:text="-"
             android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:maxLength="3" />
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <EditText
-            android:inputType="number"
-            android:autofillHints="0"
-            android:labelFor="@+id/score3"
             android:id="@+id/score3"
             android:layout_row="2"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:text=""
+            android:layout_marginTop="20dp"
+            android:autofillHints="0"
             android:background="@color/black"
-            android:textColor="@color/white"
+            android:inputType="number"
+            android:labelFor="@+id/score3"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:text="-"
             android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:maxLength="3" />
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:inputType="number"
-            android:autofillHints="0"
-            android:labelFor="@+id/score4"
             android:id="@+id/score4"
             android:layout_row="3"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:text=""
+            android:layout_marginTop="20dp"
+            android:autofillHints="0"
             android:background="@color/black"
-            android:textColor="@color/white"
+            android:inputType="number"
+            android:labelFor="@+id/score4"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:text="-"
             android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:maxLength="3" />
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:inputType="number"
-            android:autofillHints="0"
-            android:labelFor="@+id/score5"
             android:id="@+id/score5"
             android:layout_row="4"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:text=""
+            android:layout_marginTop="20dp"
+            android:autofillHints="0"
             android:background="@color/black"
-            android:textColor="@color/white"
+            android:inputType="number"
+            android:labelFor="@+id/score5"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:text="-"
             android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:maxLength="3" />
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </GridLayout>
 
@@ -339,7 +342,7 @@
         android:id="@+id/showGpa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="75dp"
         android:columnCount="2"
         android:rowCount="1"
         app:layout_constraintBottom_toBottomOf="parent"

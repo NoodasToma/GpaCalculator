@@ -22,6 +22,36 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var cs1Sem: Semester
 
+    private lateinit var cs2Sem: Semester
+
+    private lateinit var cs3Sem: Semester
+
+    private lateinit var cs4Sem: Semester
+
+    private lateinit var cs5Sem: Semester
+
+    private lateinit var cs6Sem: Semester
+
+    private lateinit var cs7Sem: Semester
+
+    private lateinit var cs8Sem: Semester
+
+    private lateinit var man1Sem: Semester
+
+    private lateinit var man2Sem: Semester
+
+    private lateinit var man3Sem: Semester
+
+    private lateinit var man4Sem: Semester
+
+    private lateinit var man5Sem: Semester
+
+    private lateinit var man6Sem: Semester
+
+    private lateinit var man7Sem: Semester
+
+    private lateinit var man8Sem: Semester
+
     private var choosingCourse:Boolean = false
 
     private var choosingSemester:Boolean = false
@@ -52,8 +82,23 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val cs1Sem:Semester= Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.currentSEM.cs1SemesterLayout)
+         cs1Sem = Semester(listOf(Subject.I2I,Subject.DS,Subject.I2CA,Subject.FOP,Subject.ENG),mainBinding.currentSEM.cs1SemesterLayout)
+         cs2Sem = Semester(listOf(Subject.OCAML,Subject.CALC,Subject.CALAB,Subject.OS,Subject.ENG), mainBinding.currentSEM.cs1SemesterLayout)
+         cs3Sem = Semester(listOf(Subject.BASES,Subject.AIDS,Subject.LINEAR,Subject.MINOR1,Subject.MINOR2), mainBinding.currentSEM.cs1SemesterLayout)
+         cs4Sem = Semester(listOf(Subject.SCRIPT,Subject.TC,Subject.DPT,Subject.MINOR1,Subject.MINOR2),mainBinding.currentSEM.cs1SemesterLayout )
+         cs5Sem = Semester(listOf(Subject.NP,Subject.I2SW,Subject.ELECTIVE,Subject.MINOR1,Subject.MINOR2),mainBinding.currentSEM.cs1SemesterLayout)
+         cs6Sem = Semester(listOf(Subject.I2CNDS,Subject.BASES,Subject.SOFTWARE,Subject.ELECTIVE,Subject.MINOR1),mainBinding.currentSEM.cs1SemesterLayout)
+         cs7Sem = Semester(listOf(Subject.ELECTIVE,Subject.ELECTIVE2,Subject.ELECTIVE3,Subject.INTERN),mainBinding.currentSEM.cs1SemesterLayout)
+         cs8Sem = Semester(listOf(Subject.ELECTIVE,Subject.ELECTIVE2,Subject.THESIS),mainBinding.currentSEM.cs1SemesterLayout)
 
+        man1Sem = Semester(listOf(Subject.FEB,Subject.Economics,Subject.MS,Subject.C4B,Subject.ENGMAN),mainBinding.currentSEM.cs1SemesterLayout)
+        man2Sem = Semester(listOf(Subject.PRMAN,Subject.Economics,Subject.C4B,Subject.PROB,Subject.ENGMAN),mainBinding.currentSEM.cs1SemesterLayout)
+        man3Sem = Semester(listOf(Subject.FA,Subject.I2M,Subject.HRM,Subject.SBE,Subject.ENGMAN),mainBinding.currentSEM.cs1SemesterLayout)
+        man4Sem = Semester(listOf(Subject.OB,Subject.LBL,Subject.CA,Subject.POM,Subject.I2PDA),mainBinding.currentSEM.cs1SemesterLayout)
+        man5Sem = Semester(listOf(Subject.I2SM,Subject.CONS,Subject.ACS,Subject.MINOR1,Subject.MINOR2),mainBinding.currentSEM.cs1SemesterLayout)
+        man6Sem = Semester(listOf(Subject.RM,Subject.BE,Subject.IFM,Subject.ELECTIVE,Subject.CONS,Subject.MINOR1),mainBinding.currentSEM.cs1SemesterLayout)
+        man7Sem = Semester(listOf(Subject.INTENRMAN,Subject.ELECTIVE,Subject.MINOR1,Subject.MINOR2,Subject.MINOR3),mainBinding.currentSEM.cs1SemesterLayout)
+        man8Sem = Semester(listOf(Subject.ELECTIVE,Subject.CONS,Subject.MINOR1,Subject.THESISMAN),mainBinding.currentSEM.cs1SemesterLayout)
 
         currentView = cs1Sem.view
         currentSubjects = cs1Sem.subjects
@@ -64,30 +109,29 @@ class MainActivity : AppCompatActivity() {
             choosingSemester = false
             showCourses()
             showSemesters()
-            mainBinding.Gpa.text = calcGpa().toString()
+            calcGpa()
         }
 
         val regex = Regex("([1234567890])*")
 
         gradeList.forEach { editText ->
-            editText.doOnTextChanged { text, _, _, _ ->
-                if (!regex.matches(text.toString())) {
+            editText.setOnClickListener {
+                if (!regex.matches(editText.text.toString())) {
                     editText.error = "Invalid input"
                 }
-
                 calcGpa()
             }
         }
 
 
         mainBinding.chooseCourse.setOnClickListener {
-            choosingCourse = true
+            choosingCourse = !choosingCourse
             showCourses()
             choosingCourse=!choosingCourse
         }
 
         mainBinding.courseNum.setOnClickListener {
-            choosingSemester = true
+            choosingSemester = !choosingSemester
             showSemesters()
             choosingSemester=!choosingSemester
         }
@@ -184,9 +228,9 @@ class MainActivity : AppCompatActivity() {
         mainBinding.Math.visibility = View.VISIBLE
         }
         else{
-            mainBinding.CompScience.visibility = View.INVISIBLE
-            mainBinding.Managemant.visibility = View.INVISIBLE
-            mainBinding.Math.visibility = View.INVISIBLE
+            mainBinding.CompScience.visibility = View.GONE
+            mainBinding.Managemant.visibility = View.GONE
+            mainBinding.Math.visibility = View.GONE
         }
         calcGpa()
     }
@@ -204,20 +248,20 @@ class MainActivity : AppCompatActivity() {
             mainBinding.semester8.visibility = View.VISIBLE
         }
         else {
-            mainBinding.semester1.visibility = View.INVISIBLE
-            mainBinding.semester2.visibility = View.INVISIBLE
-            mainBinding.semester3.visibility = View.INVISIBLE
-            mainBinding.semester4.visibility = View.INVISIBLE
-            mainBinding.semester5.visibility = View.INVISIBLE
-            mainBinding.semester6.visibility = View.INVISIBLE
-            mainBinding.semester7.visibility = View.INVISIBLE
-            mainBinding.semester8.visibility = View.INVISIBLE
+            mainBinding.semester1.visibility = View.GONE
+            mainBinding.semester2.visibility = View.GONE
+            mainBinding.semester3.visibility = View.GONE
+            mainBinding.semester4.visibility = View.GONE
+            mainBinding.semester5.visibility = View.GONE
+            mainBinding.semester6.visibility = View.GONE
+            mainBinding.semester7.visibility = View.GONE
+            mainBinding.semester8.visibility = View.GONE
         }
         calcGpa()
     }
 
     private fun showSemesterLayout(){
-        currentView.visibility = View.INVISIBLE
+        currentView.visibility = View.GONE
         when(currentSemester){
             1 -> when(currentCourse){
                 Course.CS -> {
@@ -229,37 +273,65 @@ class MainActivity : AppCompatActivity() {
                 Course.MATH -> TODO()
             }
             2 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs2Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs2Sem.subjects
+                    currentView = cs2Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             3 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs3Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs1Sem.subjects
+                    currentView = cs3Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             4 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs4Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs1Sem.subjects
+                    currentView = cs4Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             5 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs5Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs5Sem.subjects
+                    currentView = cs5Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             6 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs6Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs6Sem.subjects
+                    currentView = cs6Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             7 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs7Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs7Sem.subjects
+                    currentView = cs7Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
             8 -> when(currentCourse){
-                Course.CS -> TODO()
+                Course.CS -> {
+                    cs8Sem.view.visibility= View.VISIBLE
+                    currentSubjects = cs7Sem.subjects
+                    currentView = cs8Sem.view
+                }
                 Course.MANAGEMANT -> TODO()
                 Course.MATH -> TODO()
             }
@@ -270,7 +342,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     
-    private fun calcGpa():Float{
+    private fun calcGpa(){
         mapSubjects()
 
         var gpSum = 0.0f
@@ -281,10 +353,10 @@ class MainActivity : AppCompatActivity() {
                 gpSum+=n.credits* subGradeMap[n]!!
             }
         }
+        val result = gpSum/creditSum
 
+        mainBinding.Gpa.text = result.toString()
 
-
-        return gpSum/creditSum
     }
 
 
