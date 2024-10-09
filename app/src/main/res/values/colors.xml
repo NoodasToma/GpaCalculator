@@ -3,4 +3,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="score_bg">#C5141212</color>
+    <color name="cs">#7E000000</color>;
 </resources>

@@ -24,7 +24,19 @@ enum class Subject(val credits:Int){
     I2SM(6),CONS(6),ACS(6),
     RM(3),BE(3),IFM(6),
     INTENRMAN(6),MINOR3(6),
-    THESISMAN(12)
+    THESISMAN(12),
+
+    //math subjects
+
+    CalcMath(12),LinearMath(12),I2MS(3),
+    AnalysisMath(12),LADS(12),I2P(3),
+    Analisys2(6),Numerical(6),I2PR(6),
+    OPT(6),NA(6),
+    LO(6),I2SP(6),
+    CNO(6),NMDE(6),SDE(6),
+    ATP(6),ATNM(6),ATPS(6),
+    ME(6)
+
 
 }
 

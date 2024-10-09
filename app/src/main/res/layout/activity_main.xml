@@ -8,12 +8,200 @@
     tools:context=".MainActivity">
 
     <include
-        android:id="@+id/currentSEM"
+        android:id="@+id/cs_1_semester_layout"
         layout="@layout/cs_course_1_semester"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <include
+        android:id="@+id/cs_2_semester_layout"
+        layout="@layout/cs_course_2_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_3_semester_layout"
+        layout="@layout/cs_course_3_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_4_semester_layout"
+        layout="@layout/cs_course_4_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_5_semester_layout"
+        layout="@layout/cs_course_5_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_6_semester_layout"
+        layout="@layout/cs_course_6_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_7_semester_layout"
+        layout="@layout/cs_course_7_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/cs_8_semester_layout"
+        layout="@layout/cs_course_8_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_1_semester_layout"
+        layout="@layout/mg_course_1_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <include
+        android:id="@+id/mg_2_semester_layout"
+        layout="@layout/mg_course_2_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_3_semester_layout"
+        layout="@layout/mg_course_3_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_4_semester_layout"
+        layout="@layout/mg_course_4_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_5_semester_layout"
+        layout="@layout/mg_course_5_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_6_semester_layout"
+        layout="@layout/mg_course_6_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_7_semester_layout"
+        layout="@layout/mg_course_7_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/mg_8_semester_layout"
+        layout="@layout/mg_course_8_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_1_semester_layout"
+        layout="@layout/math_course_1_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_2_semester_layout"
+        layout="@layout/math_course_2_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_3_semester_layout"
+        layout="@layout/math_course_3_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_4_semester_layout"
+        layout="@layout/math_course_4_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_5_semester_layout"
+        layout="@layout/math_course_5_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_6_semester_layout"
+        layout="@layout/math_course_6_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_7_semester_layout"
+        layout="@layout/math_course_7_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/math_8_semester_layout"
+        layout="@layout/math_course_8_semester"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -249,7 +437,7 @@
         android:layout_marginTop="97dp"
         android:layout_marginStart="15dp"
         android:columnCount="1"
-        android:rowCount="5"
+        android:rowCount="6"
         android:rowOrderPreserved="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.407"
@@ -260,14 +448,14 @@
             android:id="@+id/score1"
             android:layout_row="0"
             android:layout_marginTop="0dp"
-            android:autofillHints="0"
+            android:hint="0"
+            android:textColorHint="@color/white"
             android:background="@color/black"
             android:inputType="number"
             android:labelFor="@+id/score1"
             android:maxLength="3"
             android:minWidth="40dp"
             android:minHeight="40dp"
-            android:text="-"
             android:textAlignment="center"
             android:textColor="@color/white"
             tools:ignore="TouchTargetSizeCheck" />
@@ -276,65 +464,86 @@
             android:id="@+id/score2"
             android:layout_row="1"
             android:layout_marginTop="20dp"
-            android:autofillHints="0"
+            android:hint="0"
             android:background="@color/black"
             android:inputType="number"
             android:labelFor="@+id/score2"
             android:maxLength="3"
             android:minWidth="40dp"
             android:minHeight="40dp"
-            android:text="-"
             android:textAlignment="center"
             android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
+            android:textColorHint="@color/white"
+            />
 
         <EditText
             android:id="@+id/score3"
             android:layout_row="2"
             android:layout_marginTop="20dp"
-            android:autofillHints="0"
+            android:hint="0"
             android:background="@color/black"
             android:inputType="number"
             android:labelFor="@+id/score3"
             android:maxLength="3"
             android:minWidth="40dp"
             android:minHeight="40dp"
-            android:text="-"
             android:textAlignment="center"
             android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:textColorHint="@color/white"
+            />
 
         <EditText
             android:id="@+id/score4"
             android:layout_row="3"
             android:layout_marginTop="20dp"
-            android:autofillHints="0"
+            android:hint="0"
             android:background="@color/black"
             android:inputType="number"
             android:labelFor="@+id/score4"
             android:maxLength="3"
             android:minWidth="40dp"
             android:minHeight="40dp"
-            android:text="-"
             android:textAlignment="center"
             android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:textColorHint="@color/white"
+            />
 
         <EditText
             android:id="@+id/score5"
             android:layout_row="4"
             android:layout_marginTop="20dp"
-            android:autofillHints="0"
+            android:hint="0"
             android:background="@color/black"
             android:inputType="number"
             android:labelFor="@+id/score5"
             android:maxLength="3"
             android:minWidth="40dp"
             android:minHeight="40dp"
-            android:text="-"
             android:textAlignment="center"
             android:textColor="@color/white"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck"
+            android:textColorHint="@color/white"/>
+
+        <EditText
+            android:id="@+id/score6"
+            android:layout_row="4"
+            android:layout_marginTop="20dp"
+            android:hint="0"
+            android:background="@color/black"
+            android:inputType="number"
+            android:labelFor="@+id/score5"
+            android:maxLength="3"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            tools:ignore="TouchTargetSizeCheck"
+            android:visibility="gone"
+            android:textColorHint="@color/white"
+            />
 
     </GridLayout>
 
@@ -355,7 +564,7 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:text="GPA:"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="70sp" />
 
         <TextView
@@ -365,7 +574,7 @@
             android:layout_column="1"
             android:layout_marginStart="10dp"
             android:text="0"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="70sp" />
     </GridLayout>
 

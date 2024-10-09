@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/cs_1_semester_layout"
+    android:id="@+id/cs_8_semester_layout"
     android:background="@drawable/bg_cs"
     >
 
@@ -31,7 +31,7 @@
             android:layout_marginTop="100dp"
             android:autoSizeTextType="uniform"
             android:background="@color/cs"
-            android:text="Introduction to informatics1 (I2I) "
+            android:text="Elective Subject 1  "
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
             android:layout_marginTop="20dp"
             android:autoSizeTextType="uniform"
             android:background="@color/cs"
-            android:text="Discrete Structures (DS) "
+            android:text="Elective Subject 2 "
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,48 +66,13 @@
             android:layout_marginTop="20dp"
             android:autoSizeTextType="uniform"
             android:background="@color/cs"
-            android:text="Computer Architecture (I2CA) "
+            android:text="Bachelor's Thesis "
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DS">
 
         </TextView>
-
-        <TextView
-            android:layout_column="0"
-            android:layout_row="3"
-            android:id="@+id/FOP"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:autoSizeTextType="uniform"
-            android:background="@color/cs"
-            android:text="Fundaments of programming (FOP) "
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/I2CA">
-
-        </TextView>
-
-        <TextView
-            android:layout_column="0"
-            android:layout_row="4"
-            android:id="@+id/English"
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:autoSizeTextType="uniform"
-            android:background="@color/cs"
-            android:text="English (Free GPA)"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/FOP">
-
-        </TextView>
-
 
 
 
